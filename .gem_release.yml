@@ -1,0 +1,5 @@
+bump:
+  recurse: false
+  file: 'lib/solidus_image_editor/version.rb'
+  message: Bump SolidusImageEditor to %{version}
+  branch: true
