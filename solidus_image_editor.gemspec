@@ -5,12 +5,12 @@ require 'solidus_image_editor/version'
 Gem::Specification.new do |s|
   s.name        = 'solidus_image_editor'
   s.version     = SolidusImageEditor::VERSION
-  s.summary     = 'TODO'
-  s.description = 'TODO'
+  s.summary     = 'On demand Product'
+  s.description = 'This extension give user a feature to personalize your product'
   s.license     = 'BSD-3-Clause'
 
-  # s.author    = 'You'
-  # s.email     = 'you@example.com'
+  s.author    = 'Sumit Sharma'
+  s.email     = 'forever.sumitsharma@gmail.com'
   # s.homepage  = 'http://www.example.com'
 
   s.files = Dir["{app,config,db,lib}/**/*", 'LICENSE', 'Rakefile', 'README.md']
