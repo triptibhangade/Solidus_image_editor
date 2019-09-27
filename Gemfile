@@ -23,6 +23,9 @@ else
 end
 
 #rails
-gem 'rails', '~> 5.2', '>= 5.2.3' in Gemfile
+gem 'rails', '~> 5.2', '>= 5.2.3'
+
+#pry
+gem 'pry'
 
 gemspec

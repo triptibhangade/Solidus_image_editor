@@ -1,0 +1,29 @@
+<% admin_breadcrumb link_to(plural_resource_name(Spree::Template), spree.admin_templates_path) %>
+
+<% admin_breadcrumb t('spree.new_template') %>
+
+<%= render partial: 'spree/shared/error_messages', locals: { target: @template } %>
+
+<div data-hook="admin_template_form_fields">
+  <main class="gxp-admin">
+    <div class="">
+      <div class="container">
+        <%= form_for [:admin, @template], method: :post, url: admin_templates_path do |f| %>
+          <fieldset data-hook="new_template" class="no-border-top no-border-bottom sticky-container">
+            <legend align="center"><%= t('spree.new_template') %></legend>
+            
+              <div class="col-md-5">
+                <div class="form-content form-content-scroll">
+                  <%= render 'form', f: f %>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="no-border-top">
+            <%= render 'spree/admin/shared/new_resource_links' %>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</div>

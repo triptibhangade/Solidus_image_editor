@@ -1,0 +1,5 @@
+<ul class="admin-subnav" data-hook="admin_on_demand_sub_tabs">
+  <% if can? :admin, Spree::Template %>
+    <%= tab :templates, match_path: '/templates' %>
+  <% end %>
+</ul>

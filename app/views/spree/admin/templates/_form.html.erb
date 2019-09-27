@@ -1,0 +1,102 @@
+<div class="form-group" data-hook="admin_template_form_name">
+  <%= f.field_container :name do %>
+    <%= f.label :template_name, class: 'required' %>
+    <%= f.text_field :name, class: 'fullwidth title', required: true %>
+    <%= f.error_message_on :name %>
+  <% end %>
+</div>
+
+<div class="form-group" data-hook="admin_template_form_description">
+  <%= f.field_container :description do %>
+    <%= f.label :template_description %>
+    <%= f.text_area :description, class: 'fullwidth title form-control', rows: "3" %>
+    <%= f.error_message_on :description %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group" data-hook="admin_template_form_width">
+      <%= f.field_container :width do %>
+        <%= f.label :template_width , class: 'required' %>
+        <%= f.number_field :width, data: {range: 'width'}, required: true, class: 'range-field' %>
+        <%= f.error_message_on :width %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group" data-hook="admin_template_form_height">
+      <%= f.field_container :height do %>
+        <%= f.label :template_height, class: 'required' %>
+        <%= f.number_field :height, data: {range: 'height'}, required: true, class: 'range-field' %>
+        <%= f.error_message_on :height %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group" data-hook="admin_template_form_edges">
+      <%= f.field_container :resolution do %>
+        <%= f.label :template_resolution do %>
+          Template Resolution<span class="valueShow"></span>
+        <% end %>
+        <%= f.range_field :resolution, data: {range: 'resolution'}, min: '0', max: '300' %>
+        <%= f.error_message_on :resolution %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group" data-hook="admin_template_form_edges">
+      <%= f.field_container :edges do %>
+        <%= f.label :template_rounded_edges do %>
+          Template Rounded Edges<span class="valueShow"></span>
+        <% end %>
+        <% max_edge = @template.present? ? @template.width : '400' %>
+        <%= f.range_field :edges, data: {range: 'radius'}, min: '0', max: max_edge %>
+        <%= f.error_message_on :edges %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group hide-margin" data-hook="admin_template_form_number_of_images">
+      <%= f.field_container :background do %>
+        <%= f.label :background %><br>
+        <label class="radio-inline">
+          <%= f.radio_button :background, 'background_image' %><%= I18n.t('spree.template.background_image') %>
+        </label>
+        <label class="radio-inline">
+          <%= f.radio_button :background, 'background_color' %><%= I18n.t('spree.template.background_color') %>
+        </label>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group" data-hook="admin_template_form_number_of_images">
+      <%= f.field_container :number_of_images do %>
+        <%= f.label :add_images %>
+        <%= f.number_field :number_of_images, class: 'fullwidth title form-control', min: '0', max: '20' %>
+        <%= f.error_message_on :number_of_images %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group" data-hook="admin_template_form_number_of_images">
+      <%= f.field_container :number_of_text_boxes do %>
+        <%= f.label :add_texts %>
+        <%= f.number_field :number_of_text_boxes, class: 'fullwidth title form-control', min: '0', max: '20' %>
+        <%= f.error_message_on :number_of_text_boxes %>
+      <% end %>
+    </div>
+  </div>
+</div>

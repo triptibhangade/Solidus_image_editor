@@ -1,0 +1,37 @@
+<% admin_layout "full-width" %>
+
+<% content_for :page_actions do %>
+  <% if can?(:create, Spree::Template) %>
+    <li id="new_template_link">
+      <%= button_link_to t('spree.new_template'), new_object_url, { id: 'admin_new_template' } %>
+    </li>
+  <% end %>
+<% end %>
+
+<%= render partial: 'spree/shared/error_messages', locals: { target: @template } %>
+
+<% admin_breadcrumb(t('spree.template_details')) %>
+
+<div data-hook="admin_template_form_fields">
+  <main class="gxp-admin">
+    <div class="row">
+      <div class="container col-12 text-left">
+        <%= form_for [:admin, @template] do |f| %>
+          <fieldset class="no-border-top no-border-bottom">
+            <div class="col-md-5">
+              <div class="form-content form-content-scroll">
+                <%= render 'form', f: f %>
+              </div>
+            </div>
+          </fieldset>
+
+          <% if can?(:update, @template) %>
+            <fieldset class="no-border-top">
+              <%= render partial: 'spree/admin/shared/edit_resource_links' %>
+            </fieldset>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</div>
