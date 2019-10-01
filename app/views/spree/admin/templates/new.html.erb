@@ -10,17 +10,36 @@
       <div class="container">
         <%= form_for [:admin, @template], method: :post, url: admin_templates_path do |f| %>
           <fieldset data-hook="new_template" class="no-border-top no-border-bottom sticky-container">
+            <div class="zoom-inout-scale" data-zoom-scale="0.8" data-zoom-change="0.01">
+              <button class="btn" data-zoom="negative">
+                <i class="fa fa-minus"></i>
+              </button>
+              <button class="btn" data-zoom="positive">
+                <i class="fa fa-plus"></i>
+              </button>
+              <div class="current-size">
+                <%= t('spree.scale.label') %>: <%= t('spree.scale.original') %>
+              </div>
+            </div>
             <legend align="center"><%= t('spree.new_template') %></legend>
-            
+            <div class="row">
+              <div class="col-md-7"> <!-- sticky-static -->
+                <div class="overflow-container">
+                  <div class="template-preview">
+                    <h2><%= t(:'spree.template.template_preview') %></h2>
+                    
+                  </div>
+                </div>
+              </div>
               <div class="col-md-5">
                 <div class="form-content form-content-scroll">
-                  <%= render 'form', f: f %>
+                  <%= render partial: 'form', locals: { f: f } %>
                 </div>
               </div>
             </div>
           </fieldset>
           <fieldset class="no-border-top">
-            <%= render 'spree/admin/shared/new_resource_links' %>
+            <%= render partial: 'spree/admin/shared/new_resource_links' %>
           </fieldset>
         <% end %>
       </div>

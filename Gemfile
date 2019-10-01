@@ -28,4 +28,7 @@ gem 'rails', '~> 5.2', '>= 5.2.3'
 #pry
 gem 'pry'
 
+#jquery
+gem 'jquery-rails'
+
 gemspec

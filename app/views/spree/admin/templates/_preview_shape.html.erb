@@ -1,0 +1,13 @@
+<% images_number_range = images_range(@template) %>
+<% if number_of_images?(@template) %>
+  <% images_number_range.each do |img_number| %>
+    <div class="preview-inner-img" data-layer="layer-<%= img_number %>"></div>
+  <% end %>
+<% end %>
+
+<% text_boxes_range = textboxes_range(@template) %>
+<% if number_of_text_boxes?(@template) %>
+  <% text_boxes_range.each do |text_number| %>
+    <div class="preview-inner-img preview-inner-text" data-layer="layer-text-<%= text_number %>"></div>
+  <% end %>
+<% end %>

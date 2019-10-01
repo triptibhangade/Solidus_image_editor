@@ -17,10 +17,36 @@
     <div class="row">
       <div class="container col-12 text-left">
         <%= form_for [:admin, @template] do |f| %>
-          <fieldset class="no-border-top no-border-bottom">
-            <div class="col-md-5">
-              <div class="form-content form-content-scroll">
-                <%= render 'form', f: f %>
+          <fieldset class="no-border-top no-border-bottom sticky-container">
+            <div class="zoom-inout-scale" data-zoom-scale="<%= (500.to_f / @template.width.to_f).round(1) %>" data-zoom-change="0.05">
+              <button class="btn" data-zoom="negative">
+                <i class="fa fa-minus"></i>
+              </button>
+              <button class="btn" data-zoom="positive">
+                <i class="fa fa-plus"></i>
+              </button>
+              <div class="current-size">
+                <%= t('spree.scale.label') %>: <%= t('spree.scale.original') %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8"><!-- sticky-static -->
+                <div class="overflow-container">
+                  <div class="template-preview">
+                    <h2><%= t(:'spree.template.template_preview') %></h2>
+                    <div class="scale-parent">
+                      <div class="preview-shape">
+                          <!-- preview shape of images and text -->
+                          <%#= render partial: 'preview_shape' %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-content form-content-scroll">
+                  <%= render partial: 'form', locals: { f: f } %>
+                </div>
               </div>
             </div>
           </fieldset>

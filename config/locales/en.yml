@@ -32,6 +32,10 @@
 
 en:
   spree:
+    admin:
+      tab:
+        on_demand_settings: Image Editor
+        templates: Templates
     new_template: New Template
     template_details: Template Details
     notice_messages:
@@ -40,7 +44,7 @@ en:
       background_image: Background Image
       background_color: Background Color
       successfully_created: Successfully Created
-    admin:
-      tab:
-        on_demand_settings: Image Editor
-        templates: Templates
+      template_preview: Template Preview
+    scale:
+      label: Label
+      original: Original

@@ -1,0 +1,13 @@
+.form-content .form-group label {
+  width: 100%;
+}
+
+.form-content .form-group label span {
+  float: right;
+  border: 1px solid #333;
+  padding: 0 10px;
+  min-height: 28px;
+  min-width: 80px;
+  border: 1px dashed #bdbdbd;
+  text-align: center;
+}
